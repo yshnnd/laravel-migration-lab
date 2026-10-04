@@ -9,22 +9,29 @@
 </head>
 <body>
 
-    <!-- Shared Navigation Bar -->
-    <nav style="background: #2b6cb0; padding: 15px;">
-        <a href="{{ url('/') }}" style="color: white; margin-right: 15px; text-decoration: none;">Home</a>
-        <a href="{{ url('/about') }}" style="color: white; margin-right: 15px; text-decoration: none;">About</a>
-        <a href="{{ url('/contact') }}" style="color: white; text-decoration: none;">Contact</a>
-    </nav>
+    <div class="page">
 
-    <!-- Dynamic Content Area -->
-    <main style="padding: 30px;">
-        @yield('content')
-    </main>
+        <!-- Shared Navigation Bar -->
+        <nav class="site-nav">
+            <span class="brand">Student Portal</span>
+            <div class="nav-links">
+                <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+                <a href="{{ url('/about') }}" class="{{ request()->is('about') ? 'active' : '' }}">About</a>
+                <a href="{{ url('/contact') }}" class="{{ request()->is('contact') ? 'active' : '' }}">Contact</a>
+            </div>
+        </nav>
 
-    <!-- Shared Footer -->
-    <footer style="background: #edf2f7; padding: 15px; text-align: center; margin-top: 40px;">
-        <p>&copy; {{ date('Y') }} Student Portal. All rights reserved.</p>
-    </footer>
+        <!-- Dynamic Content Area -->
+        <main class="site-main">
+            @yield('content')
+        </main>
+
+        <!-- Shared Footer -->
+        <footer class="site-footer">
+            <p>&copy; {{ date('Y') }} Student Portal. All rights reserved.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>

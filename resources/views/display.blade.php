@@ -12,6 +12,5 @@
         <p><strong>Motto:</strong> <em>"{{ $motto }}"</em></p>
     </div>
 
-    <br>
-    <a href="{{ url('/form') }}">← Back to Registration Form</a>
+    <a href="{{ url('/form') }}">&larr; Back to Registration Form</a>
 @endsection

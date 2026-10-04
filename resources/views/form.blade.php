@@ -1,28 +1,41 @@
 @extends('layouts.app')
 
-@section('title', 'Student Registration Form')
+@section('title', 'Student Profile Card Generator')
 
 @section('content')
-    <h2>Student Registration Form</h2>
+    <div class="card">
+        <h2>Student Profile Card Generator</h2>
+        <p class="muted">Fill in your details to generate your profile card.</p>
 
-    <form action="{{ url('/display') }}" method="POST">
-        @csrf
+        <form action="{{ url('/display') }}" method="POST">
+            @csrf
 
-        <label for="fullname">Full Name:</label><br>
-        <input type="text" id="fullname" name="fullname" required><br><br>
+            <div class="field">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
 
-        <label for="age">Age:</label><br>
-        <input type="number" id="age" name="age" min="1" required><br><br>
+            <div class="field">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="1" required>
+            </div>
 
-        <label for="course">Course / Program:</label><br>
-        <input type="text" id="course" name="course" required><br><br>
+            <div class="field">
+                <label for="course">Course / Program</label>
+                <input type="text" id="course" name="course" required>
+            </div>
 
-        <label for="email">Email Address:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+            <div class="field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-        <label for="motto">Favorite Motto / Bio:</label><br>
-        <textarea id="motto" name="motto" rows="4" cols="40"></textarea><br><br>
+            <div class="field">
+                <label for="motto">Favorite Motto / Bio</label>
+                <textarea id="motto" name="motto" rows="4"></textarea>
+            </div>
 
-        <button type="submit">Generate Profile</button>
-    </form>
+            <button type="submit">Generate Profile</button>
+        </form>
+    </div>
 @endsection
